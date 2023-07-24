@@ -57,3 +57,32 @@ function makeGrid() {
         draw();
     }
 
+    // Add event listeners
+function draw() {
+    let columns = document.getElementsByClassName("column");
+    for (let i = 0; i < columns.length; i++) {
+      columns[i].addEventListener("mouseover", changeColor);
+    }
+  }
+  
+  function changeColor() {
+    let redRadio = document.getElementById('red-pen');
+    let blackRadio = document.getElementById('black-pen');
+    let blueRadio = document.getElementById('blue-pen');
+    let rainbow = document.getElementById('rainbow');
+    let eraserRadio = document.getElementById('eraser'); 
+  
+    if (redRadio.checked) {
+      this.style.backgroundColor = '#da2d2d';
+    } else if (blackRadio.checked) {
+      this.style.backgroundColor = '#2e2b2b';
+    } else if (blueRadio.checked) {
+      this.style.backgroundColor = "#3f33dd";
+    } else if (eraserRadio.checked) {
+      this.style.backgroundColor = '';
+    } else if (rainbow.checked) {
+      let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      this.style.backgroundColor = "#" + randomColor;
+    } 
+  }
+
