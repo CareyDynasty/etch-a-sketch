@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="header">
+        <h1>Etch a sketch</h1>
+        <div id="form" class="form">
+            <p>New grid size:</p>
+            <input type="text" id="user-num" class="user-num">
+            <p id="copy-input"></p>
+            <button id="user-sub" class="user-sub">Submit</button>
+        </div>
+        <p id="prompt"></p>
+        <div id="btns">
+            <form id=btn-box>
+                <input type="radio" id="red-pen" name="pen" value="red-pen"> <label for="red-pen">Red</label>
+                <input type="radio" id="black-pen" name="pen" value="black-pen"> <label for="black-pen">Black</label>
+                <input type="radio" id="blue-pen" name="pen" value="blue-pen"> <label for="blue-pen">Blue</label>
+                <input type="radio" id="rainbow" name="pen" value="rainbow"> <label for="rainbow">Rainbow</label>
+                <input type="radio" id="eraser" name="pen" value="eraser"> <label for="eraser">Eraser</label>
+              </form> 
+              <button id="clear-btn">Clear</button>
+        </div>
+        <div class="box">
+            <div class="container"></div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Powered by The Odin Project.</p>
+    </div>
+    <script src="app.js"></script>    
 </body>
 </html>
