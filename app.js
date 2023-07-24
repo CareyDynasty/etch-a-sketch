@@ -22,4 +22,38 @@ function duplicateGrid() {
     copyInput.textContent = "x " + userGrid;
   }
 
+  // User instruction
+function entryHint() {
+    promptText.textContent = "Enter a number between 2 and 99."; 
+  }
+
+// Create Sq Grid
+function makeGrid() {
+    let number = userValue.value;
+    if (number < 0 || number > 99 || isNaN(number)) {
+      promptText.textContent = "Make sure it's a number between 2 and 99!";
+    } else {
+      promptText.textContent = "";
+      copyInput.textContent = "";
+      userValue.value = "";
+      sqGrid.innerHTML = "";
+
+      if (number == 0 || number > 99 || number == "") {
+        number = 16; // Default to 16 if invalid input
+      }
   
+      for (let i = 0; i < number; i++) {
+        let row = document.createElement('div');
+        row.classList.add('row');
+        sqGrid.appendChild(row);
+        for (let k = 0; k < number; k++) {
+          let column = document.createElement('div');
+          column.classList.add('column')
+          row.appendChild(column);
+        }
+      }
+    }
+        // Drawing of the Sq Grid
+        draw();
+    }
+
